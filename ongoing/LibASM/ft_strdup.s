@@ -1,18 +1,26 @@
 section .text
-	global _ft_strdup
-	extern _malloc
-	extern _ft_strlen
-	extern _ft_memcpy
+global _ft_strdup
+extern _ft_strlen, _malloc
 
 _ft_strdup:
-	mov rsi, rdi
-	call _ft_strlen
-	mov rdi, rax
-	inc rdi
-	inc rdi
-	mov rdx, rax
-	call _malloc
-	mov rdi, rax
-	inc rdx
-	call _ft_memcpy
-	ret
+	xor     rax, rax
+	call    _ft_strlen
+	inc     rax 
+	mov     r13, rdi
+	mov     r12, rax
+	mov     rdi, rax
+	call    _malloc
+	test    rax, rax
+	je      _end
+	mov     rcx, r12
+	mov     r14, rax
+	mov     rdi, rax
+	mov     rsi, r13
+	cld
+	rep movsb
+	mov     byte[rdi], 0
+	mov     rax, r14
+	jmp     _end
+
+_end:
+ret
