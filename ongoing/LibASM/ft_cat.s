@@ -9,8 +9,8 @@ section		.text
 	global _ft_cat
 
 _ft_cat:
-	cmp rdi, 0
-	jb _end
+	test rdi, 0x80000000
+	jne _end
 	mov r10, rdi
 
 _read:

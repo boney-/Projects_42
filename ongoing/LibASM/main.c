@@ -6,7 +6,7 @@
 /*   By: jbonnet <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/03/17 19:12:28 by jbonnet           #+#    #+#             */
-/*   Updated: 2016/01/28 14:35:41 by jbonnet          ###   ########.fr       */
+/*   Updated: 2016/01/28 16:08:55 by jbonnet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -255,8 +255,8 @@ int		main(int argc, char **argv)
 			puts("puts (Null value) \033[32mOK!\033[0m");
 		else
 			puts("puts (Null value) \033[31mK.O.\033[0m");
-		puts("\nTest of function ft_cat on standrd input:\n\033[31mCTRL + D\033[0m to end.");
-		ft_cat(0);
+	//	puts("\nTest of function ft_cat on standrd input:\n\033[31mCTRL + D\033[0m to end.");
+	//	ft_cat(0);
 		free(str1);
 		free(str2);
 		free(str3);
@@ -269,5 +269,6 @@ int		main(int argc, char **argv)
 		if ((close(fd)) == -1)
 			return (-1);
 	}
+	ft_cat(-42);
 	return (0);
 }
