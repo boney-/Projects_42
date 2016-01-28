@@ -6,7 +6,7 @@
 /*   By: jbonnet <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/03/17 19:12:28 by jbonnet           #+#    #+#             */
-/*   Updated: 2016/01/21 17:49:22 by jbonnet          ###   ########.fr       */
+/*   Updated: 2016/01/28 14:35:41 by jbonnet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,6 +61,7 @@ int		main(int argc, char **argv)
 	char *str2;
 	char *str1;
 	char *str3;
+	char *lstr;
 	int retsys;
 	int retuser;
 	int ret;
@@ -195,14 +196,20 @@ int		main(int argc, char **argv)
 		// STRDUP TEST
 		free(str1);
 		str1 = randomstr();
+		lstr = strdup("Adolescebat autem obstinatum propositum erga haec et similia multa scrutanda, stimulos admovente regina, quae abrupte mariti fortunas trudebat in exitium praeceps, cum eum potius lenitate feminea ad veritatis humanitatisque viam reducere utilia suadendo deberet, ut in Gordianorum actibus factitasse Maximini truculenti illius imperatoris rettulimus coniugem.");
 		if (strcmp(ft_strdup("bonjour fucker."), "bonjour fucker.") == 0)
 			puts("strdup (normal str) \033[32mOK!\033[0m");
 		else
 			puts("strdup (normal str) \033[31mK.O.\033[0m");
+		if (strcmp(ft_strdup(lstr), lstr) == 0)
+			puts("strdup (long str) \033[32mOK!\033[0m");
+		else
+			puts("strdup (long str) \033[31mK.O.\033[0m");
 		if (strcmp(ft_strdup(str1), str1) == 0)
 			puts("strdup (random str) \033[32mOK!\033[0m");
 		else
 			puts("strdup (random str) \033[31mK.O.\033[0m");
+		free(lstr);
 		// STRCAT TEST
 		bzero(buf, 21);
 		ft_strcat(buf, "");
